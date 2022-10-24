@@ -1,4 +1,4 @@
-import { ArrayEquals, generateRandomId, saveDBSnapshot } from "../utils/bootstrpa";
+import { ArrayEquals, generateRandomId, saveDBSnapshot } from "../utils/bootstrap";
 import { Collection, IDatabase, IDocument, ISchema } from "./types";
 
 export const dbs: IDatabase[] = []
@@ -15,11 +15,11 @@ export class Database implements IDatabase {
   }
 
   getCollection(name: string) {
-    const collection = this.collections.find((c) => c.name == name);
+    const collection = this.collections.find((c) => c.name === name);
     if (collection) {
       return collection;
     }
-    throw Error('Cannot find collection with that name')
+    throw Error('Cannot find collection with that name');
   }
 
   collections: Collection[] = [];
@@ -60,8 +60,6 @@ export class CollectionC implements Collection {
       }
     }
 
-    // console.log(doc)
-
     const _K = Object.keys(doc);
     const [bool, notAmong] = ArrayEquals(keys.sort(), _K.sort())
     // console.log(notAmong)
@@ -72,6 +70,47 @@ export class CollectionC implements Collection {
         (doc[key]).constructor == this.schema[key].type &&
         (doc[key] !== 'undefined')
       ) {
+
+        if (
+          (doc[key]).constructor === String &&
+          this.schema[key].maxLength && 
+          (doc[key].length < this.schema[key].minLength![0])
+        ) {
+          throw Error(this.schema[key].minLength![1]);
+        }
+
+        if (
+          (doc[key]).constructor === String &&
+          this.schema[key].maxLength && 
+          (doc[key].length > this.schema[key].maxLength![0])
+        ) {
+          throw console.error(this.schema[key].maxLength![1]);
+        }
+
+        if (
+          (doc[key]).constructor === Number &&
+          this.schema[key].max &&
+          (doc[key]) < this.schema[key].min![0]
+        ) {
+          throw Error(this.schema[key].min![1]);
+        }
+
+        if (
+          (doc[key]).constructor === Number &&
+          this.schema[key].max &&
+          (doc[key]) > this.schema[key].max![0]
+        ) {
+          throw Error(this.schema[key].max![1])
+        }
+
+        if (
+          (doc[key]).constructor === String && 
+          this.schema[key].validate &&
+          !this.schema[key].validate![0](doc[key])
+        ) {
+          throw Error(this.schema[key].validate![1])
+        }
+
         document[key] = doc[key]
         // console.log(this.schema[key].required)
       } else if (this.schema[key].type !== (doc[key]).constructor) {
@@ -89,14 +128,11 @@ export class CollectionC implements Collection {
 
     }
 
-    // console.log(document)
-
-
     document.collection = {
       name: this.name
-    }
+    };
     this.documents.push(document);
-    return document
+    return document;
   }
 
   documents: IDocument[] = [];
@@ -118,6 +154,7 @@ export class CollectionC implements Collection {
 export class Document implements IDocument {
   _id: string
   createdAt: number
+
   constructor(_id: string) {
     this._id = _id;
     this.createdAt = new Date().getTime()

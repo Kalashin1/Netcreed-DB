@@ -1,0 +1,381 @@
+{
+  "name": "DB",
+  "collections": [
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {},
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1664059718026,
+      "documents": [
+        {
+          "_id": "2898095ac1993b2b111ff24b7b93cecb",
+          "createdAt": 1664059718026,
+          "height": 10,
+          "name": "samson",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "8816503a431f9a82b2e0ea8090ad8edf",
+          "createdAt": 1664059718027,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    },
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {},
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1666076611831,
+      "documents": [
+        {
+          "_id": "1ec1eb7814f06d00dc2391cd8699f1be",
+          "createdAt": 1666076611834,
+          "height": 10,
+          "name": "samson",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "54e8bc7919f6bc64ebff69aa2e619524",
+          "createdAt": 1666076611835,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    },
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {},
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1666076635653,
+      "documents": [
+        {
+          "_id": "8588d206a29c6898248f18e752a9d941",
+          "createdAt": 1666076635654,
+          "height": 10,
+          "name": "samson",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "34c56cee4d234bf120951fbdbf8d8063",
+          "createdAt": 1666076635655,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    },
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {},
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1666076681019,
+      "documents": [
+        {
+          "_id": "e0967e061fbae1b7898ff692b50a73d1",
+          "createdAt": 1666076681019,
+          "height": 10,
+          "name": "samson",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "0504ab2c682cbd48086d99665cf259ad",
+          "createdAt": 1666076681020,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    },
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {
+          "maxLength": [
+            5,
+            "Exceeded the max length"
+          ]
+        },
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1666077314765,
+      "documents": [
+        {
+          "_id": "e37a194bf314808ed269f19487c6d51f",
+          "createdAt": 1666077314766,
+          "height": 10,
+          "name": "john",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "79fbeccfe039066d2c783b5ba887256e",
+          "createdAt": 1666077314767,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    },
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {
+          "maxLength": [
+            5,
+            "Exceeded the max length"
+          ]
+        },
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1666077452756,
+      "documents": [
+        {
+          "_id": "aedcaf3835b2901e19cb89855af96ace",
+          "createdAt": 1666077452759,
+          "height": 10,
+          "name": "john",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "3aba7fc1f40481dc7be2bfd484dc1791",
+          "createdAt": 1666077452760,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    }
+  ]
+}

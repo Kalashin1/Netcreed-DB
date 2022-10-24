@@ -1,0 +1,66 @@
+{
+  "name": "DB",
+  "collections": [
+    {
+      "db": "DB",
+      "name": "peoples",
+      "schema": {
+        "name": {},
+        "age": {},
+        "isAdult": {},
+        "hobbies": {},
+        "socials": {},
+        "height": {
+          "default": 10
+        },
+        "gender": {
+          "required": [
+            true,
+            "Provide a gender"
+          ]
+        }
+      },
+      "createdAt": 1664059448659,
+      "documents": [
+        {
+          "_id": "5990f23ba78eb6eff3a59906fbd26c7c",
+          "createdAt": 1664059448660,
+          "height": 10,
+          "name": "samson",
+          "age": 20,
+          "isAdult": true,
+          "hobbies": [
+            "singing"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "collection": {
+            "name": "peoples"
+          }
+        },
+        {
+          "_id": "62a84ed3e8d87b6cbb4660c15d7500bb",
+          "createdAt": 1664059448661,
+          "name": "John",
+          "age": 30,
+          "isAdult": true,
+          "hobbies": [
+            "music"
+          ],
+          "socials": {
+            "youtube": "link",
+            "facebook": "link"
+          },
+          "gender": "M",
+          "height": 20,
+          "collection": {
+            "name": "peoples"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { IDatabase, ISchema } from './types/types';
 import { CollectionC } from './types/class';
-import main from './utils/bootstrap';
+import main, { Validators } from './utils/bootstrap';
 // import express from 'express';
 
 // const app = express();
@@ -15,10 +15,22 @@ import main from './utils/bootstrap';
 
 const userSchema:ISchema = {
   name: {
-    type: String
+    type: String,
+    maxLength: [50, 'Exceeded the max length'],
+    minLength: [5, 'Less than the min length for the value']
   },
   age: {
-    type: Number
+    type: Number,
+    min: [5, 'Lowest possible value is 5'],
+    max: [25, 'Highest possible value is 10']
+  },
+  email: {
+    type: String,
+    required: [true, 'Please provide an email'],
+    validate: [
+      (v: string) => Validators.isEmail.test(v),
+      'Invalid email'
+    ]
   },
   isAdult: {
     type: Boolean
@@ -42,9 +54,10 @@ const userSchema:ISchema = {
 
 
 const doc = {
-  name: 'samson',
+  name: 'Kinanee',
   age: 20,
   isAdult: true,
+  email: 'kinaneesamsonjohn@gmail.com',
   hobbies: ["singing"],
   socials: {
     "youtube": "link",
@@ -55,7 +68,7 @@ const doc = {
 
 
 const pam = {
-  name: 'John',
+  name: 'Samson',
   age: 30,
   isAdult: true,
   hobbies: ["music"],
@@ -64,7 +77,7 @@ const pam = {
     "facebook": "link"
   },
   gender: 'M',
-  height: 20
+  height: 30
 }
 
 const DB = main("DB")
@@ -78,12 +91,12 @@ function addDoc(_doc: any, collection: CollectionC) {
 function run (){
   const sam = addDoc(doc, collection);
   // console.log(collection)
-  const userII = addDoc(pam, collection);
+  // const userII = addDoc(pam, collection);
 
   const document = collection.getDocument(sam._id);
 
   console.log(document)
-  // collection.save()
+  collection.save()
 }
 
 run()
